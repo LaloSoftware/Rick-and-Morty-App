@@ -5,7 +5,10 @@
     display: flex
     flex-direction: column
     align-items: center
-    margin-top: 10%
+    padding-top: 10%
+    h1
+        -webkit-animation: fadeIn 500ms
+        animation: fadeIn 500ms
     .botones
         margin-top: 5%
         width: 100%
@@ -17,4 +20,21 @@
         padding-left: 10px
         padding-right: 10px 
         a
+            animation: fadeInMoving 1s
+            -webkit-animation: fadeInMoving 1s
             width: 90%
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+    100%
+         opacity: 1
+
+@keyframes fadeInMoving
+    0%
+        opacity: 0
+        transform: translateY(50px)
+    100%
+        opacity: 1
+        transform: translateY(0px)
+        

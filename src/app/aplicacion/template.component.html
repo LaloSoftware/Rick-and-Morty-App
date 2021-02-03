@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+   <a mat-icon-button [routerLink]="['personajes']" routerLinkActive="active">
+        <mat-icon>account_circle</mat-icon>
+   </a>
+   <a mat-icon-button [routerLink]="['lugares']" routerLinkActive="active">
+        <mat-icon>location_on</mat-icon>
+   </a>
+   <a mat-icon-button [routerLink]="['episodios']" routerLinkActive="active">
+       <mat-icon>tv</mat-icon>
+   </a>
+</mat-toolbar>
+<div class="page">
+    <router-outlet></router-outlet>
+</div>

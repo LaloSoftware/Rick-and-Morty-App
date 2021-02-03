@@ -1,0 +1,20 @@
+<mat-paginator *ngIf="info" 
+                [length]="info['count']"
+                [pageSize]="20"
+                (page)="cambiarPagina($event)"
+            >
+</mat-paginator>
+<mat-list *ngIf="!cargando;else cargandoSection">
+    <div mat-subheader>Locations</div>
+    <mat-list-item *ngFor="let lugar of datos">
+        <div mat-line>{{lugar.name}}</div>
+        <div mat-line> Type: {{lugar.type}} </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+</mat-list>
+
+<ng-template #cargandoSection>
+    <div class="loading">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>

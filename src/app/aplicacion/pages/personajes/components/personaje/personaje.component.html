@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>
+    {{data.name}}
+</h2>
+<mat-dialog-content class="mat-typography">
+    <img [src]="data.image">
+    <p> <strong>Gender: </strong> {{data.gender}} </p>
+    <p> <strong>Species: </strong> {{data.species}} </p>
+    <p> <strong>Status: </strong> {{data.status}} </p>
+    <p> <strong>Type: </strong> {{data.type}} </p>
+    
+    <h2> Origin & location </h2>
+    <p> <strong>Origin: </strong> {{data.origin.name}}</p>
+    <p> <strong>Location: </strong> {{data.location.name}}</p>
+
+    <h2>Episodes</h2>
+    <p> <strong>Total: </strong> {{data.episode.length}}</p>
+    <ul>
+        <li *ngFor="let episode of data.episode">{{episode | episodio}}</li>
+    </ul>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button mat-mini-fab mat-dialog-close color="warn">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-dialog-actions>

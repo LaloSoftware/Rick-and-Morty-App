@@ -1,0 +1,21 @@
+<mat-paginator *ngIf="info" 
+                [length]="info['count']"
+                [pageSize]="20"
+                (page)="cambiarPagina($event)"
+            >
+</mat-paginator>
+<mat-list *ngIf="!cargando;else cargandoSection">
+    <div mat-subheader>Episodes</div>
+    <mat-list-item *ngFor="let episodio of datos">
+        <div mat-line>{{episodio.name}}</div>
+        <div mat-line>Episode N. {{episodio.id}} <strong>{{episodio.episode}}</strong></div>
+        <div mat-line> Air date: {{episodio.air_date}} </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+</mat-list>
+
+<ng-template #cargandoSection>
+    <div class="loading">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>

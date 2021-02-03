@@ -1,0 +1,23 @@
+<mat-paginator *ngIf="datos" 
+                [length]="datos['count']"
+                [pageSize]="20"
+                (page)="cambiarPagina($event)"
+            >
+</mat-paginator>
+<mat-list *ngIf="!cargando;else cargandoSection">
+    <div mat-subheader>Personajes</div>
+    <mat-list-item *ngFor="let personaje of personajes" (click)="verPersonaje(personaje)">
+        <div class="avatar-image">
+            <img [src]="personaje.image">
+        </div>
+        <div mat-line>{{personaje.name}}</div>
+        <div mat-line> Origin: {{personaje.origin.name}} </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+</mat-list>
+
+<ng-template #cargandoSection>
+    <div class="loading">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>
